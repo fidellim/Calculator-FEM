@@ -38,7 +38,50 @@
         --keyText: 221 14% 31%;
         --delResetText: 0 0% 100%;
         --equalText: 0 0% 100%;
+        /* title and input text */
         --default: 0 0% 100%;
+    }
+
+    /* Theme 2 */
+    .theme-light {
+        --mainBackground: 0 0% 90%;
+        --keypadBackground: 0 5% 81%;
+        --screenBackground: 0 0% 93%;
+
+        /* Keys */
+        --delResetBackground: 185 42% 37%;
+        --delResetBackgroundShadow: 185 58% 25%;
+        --equalBackground: 25 98% 40%;
+        --equalBackgroundShadow: 25 99% 27%;
+        --keyBackground: 45 7% 89%;
+        --keyBackgroundShadow: 35 11% 61%;
+
+        /* Text */
+        --keyText: 60 10% 19%;
+        --delResetText: 0 0% 100%;
+        --equalText: 0 0% 100%;
+        --default: 60 10% 19%;
+    }
+
+    /* Theme 3 */
+    .theme-purple {
+        --mainBackground: 268 75% 9%;
+        --keypadBackground: 268 71% 12%;
+        --screenBackground: 268 71% 12%;
+
+        /* Keys */
+        --delResetBackground: 281 89% 26%;
+        --delResetBackgroundShadow: 285 91% 52%;
+        --equalBackground: 176 100% 44%;
+        --equalBackgroundShadow: 177 92% 70%;
+        --keyBackground: 268 47% 21%;
+        --keyBackgroundShadow: 290 70% 36%;
+
+        /* Text */
+        --keyText: 52 100% 62%;
+        --delResetText: 0 0% 100%;
+        --equalText: 198 20% 13%;
+        --default: 52 100% 62%;
     }
 
     body {
