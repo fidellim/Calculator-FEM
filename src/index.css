@@ -1,3 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    :root {
+        --leagueSpartan: 'League Spartan', 'sans-serif';
+
+        /* Theme 1 (default) */
+        /* Backgrounds */
+
+        /* (main background) */
+        --mainBackground: 222 26% 31%;
+        /* (toggle background, keypad background) */
+        --keypadBackground: 223 31% 20%;
+        /* (screen background) */
+        --screenBackground: 224 36% 15%;
+
+        /* Keys */
+
+        /* (key background) */
+        --delResetBackground: 225 21% 49%;
+        /* (key shadow) */
+        --delResetBackgroundShadow: 224 28% 35%;
+        /* (key background, toggle) */
+        --equalBackground: 6 63% 50%;
+        /* (key shadow) */
+        --equalBackgroundShadow: 6 70% 34%;
+        /* (key background) */
+        --keyBackground: 30 25% 89%;
+        /* (key shadow) */
+        --keyBackgroundShadow: 28 16% 65%;
+
+        /* Text */
+
+        --keyText: 221 14% 31%;
+        --delResetText: 0 0% 100%;
+        --equalText: 0 0% 100%;
+        --default: 0 0% 100%;
+    }
+
+    body {
+        font-family: var(--leagueSpartan);
+    }
+}
