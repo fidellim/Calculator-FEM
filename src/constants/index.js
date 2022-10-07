@@ -61,7 +61,7 @@ export const keys = [
     },
     {
         keyCode: 106,
-        value: '*',
+        value: '×',
     },
     {
         keyCode: 27,
