@@ -14,17 +14,13 @@ const Button = ({ value }) => {
 
     const isKeyEquals = (val) => val.toUpperCase() === EQUALS
 
-    const checkValue = (val) => {
+    const buttonColor = (val) => {
         let res = ''
-
-        if (isKeyResetOrEqual(val)) {
-            res += `col-span-2${SPACE}`
-        }
 
         if (isKeyResetOrDelete(val)) {
             res += `bg-delResetBackground${SPACE}text-delResetText`
         } else if (isKeyEquals(val)) {
-            res += `bg-equalBackground${SPACE}text-white`
+            res += `bg-equalBackground${SPACE}text-equalText`
         } else {
             res += `bg-keyBackground${SPACE}text-keyText`
         }
@@ -32,9 +28,42 @@ const Button = ({ value }) => {
         return res
     }
 
+    const bottomColor = (val) => {
+        let res = ''
+
+        if (isKeyResetOrDelete(val)) {
+            res += `bg-delResetBackgroundShadow`
+        } else if (isKeyEquals(val)) {
+            res += `bg-equalBackgroundShadow`
+        } else {
+            res += `bg-keyBackgroundShadow`
+        }
+
+        return res
+    }
+
+    const checkColSpan = (val) => {
+        let res = ''
+
+        if (isKeyResetOrEqual(val)) res += `col-span-2${SPACE}`
+        return res
+    }
+    // hover: shadow - [inset_0_0_0_10em_rgba(255, 255, 255, 0.3)]
+
     return (
-        <div className={`${checkValue(value)} rounded-lg text-center py-2`}>
-            {value.toUpperCase()}
+        <div className={`relative ${checkColSpan(value)}`}>
+            <div
+                className={`${buttonColor(
+                    value
+                )} keypad z-20 relative rounded-lg text-center py-2 hover:translate-y-[.35rem] active:translate-y-[.35rem] `}
+            >
+                {value.toUpperCase()}
+            </div>
+            <div
+                className={`${bottomColor(
+                    value
+                )} absolute inset-x-0 -bottom-[5px] rounded-b-lg h-[20px] w-full`}
+            />
         </div>
     )
 }
