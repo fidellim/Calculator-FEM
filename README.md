@@ -64,7 +64,12 @@ const proudOfThisFunc = () => {
 
 ### Useful resources
 
--   [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+-   [Color Theme Switcher](https://dev.to/chaoocharles/learn-react-and-tailwind-css-one-color-website-with-a-theme-switcher-1gj0) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+-   https://calculator-abhijit.netlify.app/
+-   https://react-calculator-app-main.herokuapp.com/
+-   https://github.com/kens-visuals/calculator-app
+
+-   https://codepen.io/Kelderic/pen/Qjagjz
 
 ## Author
 
