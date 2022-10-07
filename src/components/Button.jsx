@@ -33,11 +33,7 @@ const Button = ({ value }) => {
     }
 
     return (
-        <div
-            className={`${checkValue(
-                value
-            )} rounded-lg text-center py-2 text-xl`}
-        >
+        <div className={`${checkValue(value)} rounded-lg text-center py-2`}>
             {value.toUpperCase()}
         </div>
     )
