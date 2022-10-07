@@ -84,6 +84,24 @@
         --default: 52 100% 62%;
     }
 
+    .keypad:hover {
+        --delResetBackground: 225 21% 69%;
+        --equalBackground: 6 63% 70%;
+        --keyBackground: 30 25% 109%;
+    }
+
+    .theme-light .keypad:hover {
+        --delResetBackground: 185 42% 57%;
+        --equalBackground: 25 98% 60%;
+        --keyBackground: 45 7% 109%;
+    }
+
+    .theme-purple .keypad:hover {
+        --delResetBackground: 281 89% 46%;
+        --equalBackground: 176 100% 64%;
+        --keyBackground: 268 47% 41%;
+    }
+
     body {
         font-family: var(--leagueSpartan);
         font-size: 32px;
