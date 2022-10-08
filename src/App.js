@@ -9,6 +9,7 @@ function App() {
         prevNum: undefined,
         currNum: '0',
         operation: undefined,
+        calculation: undefined,
     })
 
     return (
