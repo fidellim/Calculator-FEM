@@ -1,10 +1,15 @@
-import React from 'react'
+import { Context } from '../App'
+import { useContext, useRef } from 'react'
 
 const Button = ({ value }) => {
+    const { setCalculator, calculator } = useContext(Context)
+    const buttonRef = useRef()
+
     const EQUALS = '=',
         RESET = 'RESET',
         DELETE = 'DEL',
-        SPACE = ' '
+        SPACE = ' ',
+        NEGATIVE = '-'
 
     const isKeyResetOrEqual = (val) =>
         val.toUpperCase() === RESET || val.toUpperCase() === EQUALS
@@ -49,15 +54,42 @@ const Button = ({ value }) => {
         return res
     }
 
+    const handleButton = () => {
+        const { innerHTML: buttonValue } = buttonRef.current
+
+        // Check if button is number
+        // Check decimals
+        //    - there should be one decimal only
+        //    - if current value is zero, append it with decimal not replace
+        // Check "-"
+        if (Number.isInteger(Number(buttonValue)) || buttonValue === NEGATIVE) {
+            if (calculator.currNum === '0') {
+                setCalculator((prev) => ({
+                    ...prev,
+                    currNum: buttonRef.current.innerHTML,
+                }))
+            } else {
+                setCalculator((prev) => ({
+                    ...prev,
+                    currNum: prev.currNum + buttonValue,
+                }))
+            }
+            return
+        }
+
+
     return (
         <div className={`relative ${checkColSpan(value)}`}>
-            <div
+            <button
                 className={`${buttonColor(
                     value
-                )} keypad z-20 relative rounded sm:rounded-lg text-center  hover:translate-y-[.35rem] active:translate-y-[.35rem] h-[48px] flex justify-center items-center`}
+                )} keypad z-20 relative rounded sm:rounded-lg text-center hover:translate-y-[.35rem] active:translate-y-[.35rem] h-[48px] w-full flex justify-center items-center`}
+                onClick={handleButton}
             >
-                <h2 className="leading-[1] pt-3 pb-1">{value.toUpperCase()}</h2>
-            </div>
+                <h2 ref={buttonRef} className="leading-[1] pt-3 pb-1">
+                    {value.toUpperCase()}
+                </h2>
+            </button>
             <div
                 className={`${bottomColor(
                     value
