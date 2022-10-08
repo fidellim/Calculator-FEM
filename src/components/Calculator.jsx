@@ -20,7 +20,7 @@ const Calculator = () => {
                 type="text"
                 className="text-right bg-screenBackground rounded-lg w-full p-5 text-default"
             >
-                {calculator.currNum}
+                <p id="display">{calculator.currNum}</p>
             </div>
             <div className="grid grid-cols-4 gap-5 bg-keypadBackground p-5 rounded-lg">
                 {keys.map((key) => (
