@@ -77,6 +77,24 @@ const Button = ({ value }) => {
             return
         }
 
+        // Delete last character
+        // If there is only one character, change it to "0"
+        if (buttonValue === DELETE) {
+            setCalculator((prev) => {
+                if (prev.currNum.length > 1) {
+                    return {
+                        ...prev,
+                        currNum: prev.currNum.slice(0, -1),
+                    }
+                }
+                return {
+                    ...prev,
+                    currNum: '0',
+                }
+            })
+        }
+
+    }
 
     return (
         <div className={`relative ${checkColSpan(value)}`}>
