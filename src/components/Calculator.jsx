@@ -23,9 +23,10 @@ const Calculator = () => {
                 <p id="display">{calculator.currNum}</p>
             </div>
             <div className="grid grid-cols-4 gap-5 bg-keypadBackground p-5 rounded-lg">
-                {keys.map((key) => (
-                    <Button key={key.keyCode} value={key.value} />
-                ))}
+                {keys.map((key) => {
+                    const { id, value } = key
+                    return <Button key={id} value={value} id={id} />
+                })}
             </div>
         </div>
     )
