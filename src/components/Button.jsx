@@ -1,59 +1,20 @@
 import { Context } from '../App'
 import { useContext, useRef } from 'react'
+import {
+    checkColSpan,
+    bottomColor,
+    buttonColor,
+    EQUALS,
+    RESET,
+    DELETE,
+    SPACE,
+    NEGATIVE,
+    OPERATIONS,
+} from '../constants'
 
 const Button = ({ value, id }) => {
     const { setCalculator, calculator } = useContext(Context)
     const buttonRef = useRef()
-
-    const EQUALS = '=',
-        RESET = 'RESET',
-        DELETE = 'DEL',
-        SPACE = ' ',
-        NEGATIVE = '-',
-        OPERATIONS = '+-×/'
-
-    const isKeyResetOrEqual = (val) =>
-        val.toUpperCase() === RESET || val.toUpperCase() === EQUALS
-
-    const isKeyResetOrDelete = (val) =>
-        val.toUpperCase() === RESET || val.toUpperCase() === DELETE
-
-    const isKeyEquals = (val) => val.toUpperCase() === EQUALS
-
-    const buttonColor = (val) => {
-        let res = ''
-
-        if (isKeyResetOrDelete(val)) {
-            res += `bg-delResetBackground${SPACE}text-delResetText${SPACE}text-[20px]`
-        } else if (isKeyEquals(val)) {
-            res += `bg-equalBackground${SPACE}text-equalText${SPACE}text-[20px]`
-        } else {
-            res += `bg-keyBackground${SPACE}text-keyText`
-        }
-
-        return res
-    }
-
-    const bottomColor = (val) => {
-        let res = ''
-
-        if (isKeyResetOrDelete(val)) {
-            res += `bg-delResetBackgroundShadow`
-        } else if (isKeyEquals(val)) {
-            res += `bg-equalBackgroundShadow`
-        } else {
-            res += `bg-keyBackgroundShadow`
-        }
-
-        return res
-    }
-
-    const checkColSpan = (val) => {
-        let res = ''
-
-        if (isKeyResetOrEqual(val)) res += `col-span-2${SPACE}`
-        return res
-    }
 
     const handleButton = () => {
         const { innerHTML: buttonValue } = buttonRef.current
