@@ -90,3 +90,53 @@ export const keys = [
         id: 'equals',
     },
 ]
+
+export const EQUALS = '=',
+    RESET = 'RESET',
+    DELETE = 'DEL',
+    SPACE = ' ',
+    NEGATIVE = '-',
+    OPERATIONS = '+-×/'
+
+export const isKeyResetOrEqual = (val) =>
+    val.toUpperCase() === RESET || val.toUpperCase() === EQUALS
+
+export const isKeyResetOrDelete = (val) =>
+    val.toUpperCase() === RESET || val.toUpperCase() === DELETE
+
+export const isKeyEquals = (val) => val.toUpperCase() === EQUALS
+
+export const buttonColor = (val) => {
+    let res = ''
+
+    if (isKeyResetOrDelete(val)) {
+        res += `bg-delResetBackground${SPACE}text-delResetText${SPACE}text-[20px]`
+    } else if (isKeyEquals(val)) {
+        res += `bg-equalBackground${SPACE}text-equalText${SPACE}text-[20px]`
+    } else {
+        res += `bg-keyBackground${SPACE}text-keyText`
+    }
+
+    return res
+}
+
+export const bottomColor = (val) => {
+    let res = ''
+
+    if (isKeyResetOrDelete(val)) {
+        res += `bg-delResetBackgroundShadow`
+    } else if (isKeyEquals(val)) {
+        res += `bg-equalBackgroundShadow`
+    } else {
+        res += `bg-keyBackgroundShadow`
+    }
+
+    return res
+}
+
+export const checkColSpan = (val) => {
+    let res = ''
+
+    if (isKeyResetOrEqual(val)) res += `col-span-2${SPACE}`
+    return res
+}
