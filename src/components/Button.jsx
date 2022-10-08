@@ -94,6 +94,14 @@ const Button = ({ value }) => {
             })
         }
 
+        // Reset values
+        if (buttonValue === RESET) {
+            setCalculator({
+                prevNum: undefined,
+                currNum: '0',
+                operation: undefined,
+            })
+        }
     }
 
     return (
