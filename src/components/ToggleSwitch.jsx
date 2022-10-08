@@ -9,13 +9,13 @@ const ToggleSwitch = () => {
 
     useEffect(() => {
         const handleClick = (event) => {
-            if (event.target.tagName.toLowerCase() == 'input') {
+            if (event.target.tagName.toLowerCase() === 'input') {
                 let input = event.target
                 let slider = document.querySelector('.toggleSwitchDiv')
                 let labels = document.querySelectorAll('.toggleLabel')
 
                 labels.forEach(function (label) {
-                    if (label == input.parentElement) {
+                    if (label === input.parentElement) {
                         label.classList.add('selected')
                         console.log(input.value)
                         const { value } = input
@@ -46,7 +46,7 @@ const ToggleSwitch = () => {
             document
                 .querySelector('.toggleSwitch')
                 .removeEventListener('click', handleClick)
-    }, [])
+    }, [setTheme])
 
     return (
         <div className="flex items-center justify-center text-default text-[12px] gap-5">
