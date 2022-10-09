@@ -88,32 +88,92 @@ const Button = ({ value, id }) => {
         }
 
         if (OPERATIONS.includes(buttonValue)) {
-            const lastChar = calculator.calculation.at(-1)
+            let lastChar = undefined
+            if (calculator.calculation) lastChar = calculator.calculation.at(-1)
 
-            if (OPERATIONS.includes(lastChar)) {
+            // if there is still no value but u want to add operation
+            if (!lastChar) {
                 setCalculator((prev) => ({
                     ...prev,
                     currNum: buttonValue,
-                    calculation: prev.calculation.slice(0, -1) + buttonValue,
+                    calculation: buttonValue,
+                    operation: buttonValue,
                 }))
+            } else if (OPERATIONS.includes(lastChar)) {
+                let secondLastChar = calculator.calculation.at(-2)
 
-                //check if operation is same
-                // if not change operation
-                // console.log(
-                //     eval(
-                //         `${calculator.prevNum} ${calculator.operation} ${calculator.currNum}`
-                //     )
-                // )
-                // check if buttonValue is minus
-                // if minus, allow
-                // else override the operation
-                // if (buttonValue === NEGATIVE) {
-                //     setCalculator((prev) => ({
-                //         ...prev,
-                //         currNum: tempVal,
-                //         calculation: tempVal,
-                //     }))
-                // }
+                if (
+                    lastChar === '-' &&
+                    secondLastChar === '-' &&
+                    buttonValue === NEGATIVE
+                ) {
+                    return
+                }
+
+                if (
+                    calculator.calculation.length === 1 &&
+                    lastChar === '-' &&
+                    buttonValue === NEGATIVE
+                ) {
+                    return
+                }
+
+                if (
+                    calculator.calculation.length > 1 &&
+                    OPERATIONS.includes(secondLastChar) &&
+                    lastChar === NEGATIVE &&
+                    buttonValue === NEGATIVE
+                ) {
+                    return
+                }
+
+                if (buttonValue === NEGATIVE) {
+                    if (calculator.calculation.length === 1) {
+                        setCalculator((prev) => ({
+                            ...prev,
+                            currNum: buttonValue,
+                            calculation: buttonValue,
+                            operation: buttonValue,
+                        }))
+                    } else {
+                        setCalculator((prev) => ({
+                            ...prev,
+                            currNum: buttonValue,
+                            calculation: prev.calculation + buttonValue,
+                            operation: buttonValue,
+                        }))
+                    }
+                } else {
+                    setCalculator((prev) => {
+                        // if (lastChar === NEGATIVE) {
+                        //     const secondLastChar = calculator.calculation.at(-1)
+                        //     console.log('secondLastChar: ', secondLastChar)
+                        // }
+
+                        // check if last two chars of calculator.calculation are operators
+                        // if true, remove last 2 chars and replace with buttonValue
+                        if (
+                            OPERATIONS.includes(lastChar) &&
+                            OPERATIONS.includes(secondLastChar)
+                        ) {
+                            return {
+                                ...prev,
+                                currNum: buttonValue,
+                                calculation:
+                                    prev.calculation.slice(0, -2) + buttonValue,
+                                operation: buttonValue,
+                            }
+                        } else {
+                            return {
+                                ...prev,
+                                currNum: buttonValue,
+                                calculation:
+                                    prev.calculation.slice(0, -1) + buttonValue,
+                                operation: buttonValue,
+                            }
+                        }
+                    })
+                }
             } else if (calculator.calculation.includes(EQUALS)) {
                 // if calculation has equals
                 // set calculation to "currNum + buttonValue"
