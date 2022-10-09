@@ -9,7 +9,7 @@ const Calculator = () => {
     // console.log(calculator)
 
     return (
-        <div className="flex flex-col gap-6 w-[475px]">
+        <div className="flex flex-col gap-6 w-[475px] max-w-full">
             <div className="flex justify-between">
                 <div>
                     <h1 className="text-default mt-[20px]">calc</h1>
