@@ -15,7 +15,7 @@ function App() {
         <>
             <Context.Provider value={{ setTheme, calculator, setCalculator }}>
                 <div
-                    className={`${theme} bg-mainBackground min-w-screen min-h-screen`}
+                    className={`${theme} transition-all ease-in bg-mainBackground min-w-screen min-h-screen`}
                 >
                     <main className="flex justify-center items-center min-h-screen p-5">
                         <Calculator />
