@@ -7,6 +7,10 @@ const ToggleSwitch = () => {
         TWO = '2',
         THREE = '3'
 
+    const radioOne = useRef()
+    const radioTwo = useRef()
+    const radioThree = useRef()
+
     useEffect(() => {
         const handleClick = (event) => {
             if (event.target.tagName.toLowerCase() === 'input') {
