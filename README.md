@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [Add solution URL here]()
--   Live Site URL: [Add live site URL here]()
+-   Solution URL: [Solution](https://github.com/fidellim/Calculator-FEM)
+-   Live Site URL: [Live Site](https://calculator-fem-fidellim.netlify.app/)
 
 ## My process
 
@@ -46,7 +46,7 @@ Users should be able to:
 
 ### Useful resources
 
--   [Color Theme Switcher](https://dev.to/chaoocharles/learn-react-and-tailwind-css-one-color-website-with-a-theme-switcher-1gj0) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+-   [Color Theme Switcher](https://dev.to/chaoocharles/learn-react-and-tailwind-css-one-color-website-with-a-theme-switcher-1gj0)
 -   [3 Option Toggle Switch](https://codepen.io/Kelderic/pen/Qjagjz)
 -   [Display JS Object](https://stackoverflow.com/questions/957537/how-can-i-display-a-javascript-object)
 -   [FreeCodeCamp Test Cases](https://github.com/freeCodeCamp/testable-projects-fcc/blob/main/src/project-tests/calculator-tests.js)
