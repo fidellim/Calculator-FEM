@@ -48,6 +48,11 @@ Users should be able to:
 -   [3 Option Toggle Switch](https://codepen.io/Kelderic/pen/Qjagjz)
 -   [Display JS Object](https://stackoverflow.com/questions/957537/how-can-i-display-a-javascript-object)
 -   [FreeCodeCamp Test Cases](https://github.com/freeCodeCamp/testable-projects-fcc/blob/main/src/project-tests/calculator-tests.js)
+-   [FreeCodeCamp Calculator](https://codepen.io/freeCodeCamp/pen/wgGVVX)
+-   [Dark Mode TailwindCSS](https://tailwindcss.com/docs/dark-mode)
+-   [Check if user is in Dark/Light mode](https://www.kindacode.com/article/react-check-if-user-device-is-in-dark-mode-light-mode/#:~:text=The%20Code-,Overview,scheme%3A%20dark)
+-   [matchMedia function](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia)
+-   [prefers-color-scheme CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
 
 ## Author
 
