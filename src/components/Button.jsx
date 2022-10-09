@@ -246,6 +246,7 @@ const Button = ({ value, id }) => {
             statement = statement.replaceAll(/--/g, '- -')
 
             const solveStatement = (statement) => {
+                /* eslint-disable */
                 return Function(`'use strict'; return (${statement})`)()
             }
 
