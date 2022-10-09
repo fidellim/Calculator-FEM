@@ -269,7 +269,7 @@ const Button = ({ value, id }) => {
             <button
                 className={`${buttonColor(
                     value
-                )} keypad z-20 relative rounded sm:rounded-lg text-center hover:translate-y-[.35rem] active:translate-y-[.35rem] h-[48px] w-full flex justify-center items-center`}
+                )} keypad z-20 relative rounded sm:rounded-lg text-center active:translate-y-[.35rem] h-[48px] w-full flex justify-center items-center`}
                 onClick={handleButton}
             >
                 <span ref={buttonRef} id={id} className="leading-[1] pt-3 pb-1">
