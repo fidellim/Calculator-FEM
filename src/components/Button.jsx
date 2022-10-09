@@ -7,7 +7,7 @@ import {
     EQUALS,
     RESET,
     DELETE,
-    SPACE,
+    DECIMAL,
     NEGATIVE,
     OPERATIONS,
 } from '../constants'
