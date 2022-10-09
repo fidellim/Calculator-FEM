@@ -96,6 +96,7 @@ export const EQUALS = '=',
     DELETE = 'DEL',
     SPACE = ' ',
     NEGATIVE = '-',
+    DECIMAL = '.',
     OPERATIONS = '+-×/'
 
 export const isKeyResetOrEqual = (val) =>
