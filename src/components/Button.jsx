@@ -24,26 +24,18 @@ const Button = ({ value, id }) => {
         //    - there should be one decimal only
         //    - if current value is zero, append it with decimal not replace
         // Check "-"
-        if (Number.isInteger(Number(buttonValue))) {
+        if (Number.isInteger(Number(buttonValue)) || buttonValue === DECIMAL) {
             if (calculator.currNum === '0') {
-                if (calculator.operation && !calculator.prevNum) {
-                    setCalculator((prev) => ({
-                        ...prev,
-                        // prevNum: prev.currNum,
-                        currNum: buttonValue,
-                        calculation: prev.calculation + buttonValue,
-                    }))
-                } else {
-                    let tempVal = ''
-                    if (buttonValue === NEGATIVE) tempVal = '-0'
-                    else tempVal = buttonValue
+                let tempVal = ''
+                if (buttonValue === DECIMAL) tempVal = '0.'
+                else tempVal = buttonValue
 
-                    setCalculator((prev) => ({
-                        ...prev,
-                        currNum: tempVal,
-                        calculation: tempVal,
-                    }))
-                }
+                setCalculator((prev) => ({
+                    ...prev,
+                    currNum: tempVal,
+                    calculation: tempVal,
+                }))
+                // }
             } else {
                 // check if statement has equals
                 if (calculator.calculation.includes(EQUALS)) {
@@ -53,20 +45,33 @@ const Button = ({ value, id }) => {
                         calculation: buttonValue,
                         operation: undefined,
                     }))
+                } else if (buttonValue === DECIMAL) {
+                    // there should only be one decimal per number
+                    if (
+                        !calculator.currNum.includes(DECIMAL) &&
+                        buttonValue === DECIMAL
+                    ) {
+                        setCalculator((prev) => {
+                            // Check if prev.currNum is operator
+                            let isPrevCharOperator = OPERATIONS.includes(
+                                prev.currNum
+                            )
+
+                            return {
+                                ...prev,
+                                currNum: isPrevCharOperator
+                                    ? '0.'
+                                    : prev.currNum + buttonValue,
+                                calculation: isPrevCharOperator
+                                    ? prev.calculation + '0.'
+                                    : prev.calculation + buttonValue,
+                                operation: undefined,
+                            }
+                        })
+                    }
                 } else {
-                    // check if operation has a value already and prevNum is still empty
-                    // if (calculator.operation && !calculator.prevNum) {
-                    //     setCalculator((prev) => ({
-                    //         ...prev,
-                    //         prevNum: prev.currNum,
-                    //         currNum: buttonValue,
-                    //         calculation: buttonValue,
-                    //     }))
-                    // } else {
-                    // Check if val is -0
                     let tempVal = ''
-                    if (calculator.currNum === '-0') tempVal = `-${buttonValue}`
-                    else if (OPERATIONS.includes(calculator.currNum))
+                    if (OPERATIONS.includes(calculator.currNum))
                         tempVal = buttonValue
                     else tempVal = calculator.currNum + buttonValue
 
