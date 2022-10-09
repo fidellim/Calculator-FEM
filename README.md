@@ -57,6 +57,9 @@ Users should be able to:
 -   [prefers-color-scheme CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
 -   [MDN Web Docs - HSL()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl)
 -   [New Syntaxex for colors CSS](https://css-tricks.com/the-expanding-gamut-of-color-on-the-web/#aa-a-tale-of-new-syntaxes)
+-   [eval() function has risk](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval)
+-   [Alternative for eval()](https://dev.to/spukas/everything-wrong-with-javascript-eval-35on)
+-   [Disable Rule ESLint](https://eslint.org/docs/latest/user-guide/configuring/rules)
 
 ## Author
 
