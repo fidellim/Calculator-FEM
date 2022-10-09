@@ -36,6 +36,29 @@ const ToggleSwitch = () => {
             })
         }
 
+        const checkTheme = (isDarkMode) => {
+            if (isDarkMode) {
+                changeTheme(radioOne.current)
+            } else {
+                changeTheme(radioTwo.current)
+            }
+        }
+
+        // Check Theme of Operating System or Browser
+        const isDarkMode = window.matchMedia(
+            '(prefers-color-scheme: dark)'
+        ).matches
+
+        // Check Theme onLoad
+        checkTheme(isDarkMode)
+
+        // Listen for changes in user's OS/browser theme
+        window
+            .matchMedia('(prefers-color-scheme: dark)')
+            .addEventListener('change', (event) => {
+                checkTheme(event.matches)
+            })
+
         const handleClick = (event) => {
             if (event.target.tagName.toLowerCase() === 'input') {
                 let input = event.target
