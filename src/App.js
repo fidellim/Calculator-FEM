@@ -18,11 +18,6 @@ function App() {
                 <div
                     className={`${theme} bg-mainBackground min-w-screen min-h-screen`}
                 >
-                    <p>
-                        {JSON.stringify(calculator, function (k, v) {
-                            return v === undefined ? null : v
-                        })}
-                    </p>
                     <main className="flex justify-center items-center min-h-screen p-5">
                         <Calculator />
                     </main>
