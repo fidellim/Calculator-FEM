@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useRef } from 'react'
 import { Context } from '../App'
 
 const ToggleSwitch = () => {
@@ -79,6 +79,7 @@ const ToggleSwitch = () => {
                             name="searchtype"
                             data-location="0"
                             value={ONE}
+                            ref={radioOne}
                         />
                     </label>
                     <label className="toggleLabel">
@@ -88,6 +89,7 @@ const ToggleSwitch = () => {
                             name="searchtype"
                             data-location="calc(100%)"
                             value={TWO}
+                            ref={radioTwo}
                         />
                     </label>
                     <label className="toggleLabel">
@@ -97,6 +99,7 @@ const ToggleSwitch = () => {
                             name="searchtype"
                             data-location="calc(200%)"
                             value={THREE}
+                            ref={radioThree}
                         />
                     </label>
                 </div>
