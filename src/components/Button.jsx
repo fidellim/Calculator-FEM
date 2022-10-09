@@ -225,23 +225,33 @@ const Button = ({ value, id }) => {
         }
 
         if (buttonValue === EQUALS) {
+            // check if first character is equals / calculator.calculation is undefined
             // check if the statement has equals
-            if (calculator.calculation.includes(EQUALS)) return
+            if (
+                calculator.calculation &&
+                calculator.calculation.includes(EQUALS)
+            )
+                return
 
             // check if the last character in the calculation is an operation
-            const lastChar = calculator.calculation.at(-1)
-            let statement = calculator.calculation
+            const lastChar =
+                calculator.calculation && calculator.calculation.at(-1)
+            let statement = calculator.calculation || ''
             if (OPERATIONS.includes(lastChar) || lastChar === NEGATIVE)
                 statement = calculator.calculation.slice(0, -1)
 
             // replace multiplication character to x/*
             statement = statement.replaceAll(/×/g, '*')
+            //  replace "--" to "- -"
+            statement = statement.replaceAll(/--/g, '- -')
 
             const answer = eval(statement)
-            console.log(answer)
+            //  replace "- -" to "--"
+            statement = statement.replaceAll(/- -/g, '--')
+            // console.log(answer)
             setCalculator({
-                currNum: answer,
-                calculation: `${statement}${EQUALS}${answer}`,
+                currNum: String(Number(answer)),
+                calculation: `${statement}${EQUALS}${String(Number(answer))}`,
                 operation: EQUALS,
             })
         }
