@@ -71,10 +71,21 @@ const ToggleSwitch = () => {
             .addEventListener('click', handleClick)
 
         // CLEANUP FUNCTION
-        return () =>
+        return () => {
+            // OnChange Theme Remove Listener
+            window
+                .matchMedia('(prefers-color-scheme: dark)')
+                .removeEventListener('change', (event) => {
+                    const isDarkMode = event.matches
+                    if (isDarkMode) setTheme('')
+                    else setTheme('theme-light')
+                })
+
+            // OnClick Remove Listener
             document
                 .querySelector('.toggleSwitch')
                 .removeEventListener('click', handleClick)
+        }
     }, [setTheme])
 
     return (
