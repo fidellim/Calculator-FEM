@@ -53,6 +53,8 @@ Users should be able to:
 -   [Check if user is in Dark/Light mode](https://www.kindacode.com/article/react-check-if-user-device-is-in-dark-mode-light-mode/#:~:text=The%20Code-,Overview,scheme%3A%20dark)
 -   [matchMedia function](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia)
 -   [prefers-color-scheme CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
+-   [MDN Web Docs - HSL()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl)
+-   [New Syntaxex for colors CSS](https://css-tricks.com/the-expanding-gamut-of-color-on-the-web/#aa-a-tale-of-new-syntaxes)
 
 ## Author
 
