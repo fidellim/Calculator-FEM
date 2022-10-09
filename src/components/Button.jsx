@@ -197,6 +197,8 @@ const Button = ({ value, id }) => {
         // Delete last character
         // If there is only one character, change it to "0"
         if (buttonValue === DELETE) {
+            if (!calculator.calculation) return
+
             setCalculator((prev) => {
                 if (prev.currNum.length > 1) {
                     return {
@@ -207,7 +209,7 @@ const Button = ({ value, id }) => {
                 }
                 return {
                     ...prev,
-                    calculation: prev.calculation.slice(0, -1) + '0',
+                    calculation: prev.calculation.slice(0, -1),
                     currNum: '0',
                 }
             })
