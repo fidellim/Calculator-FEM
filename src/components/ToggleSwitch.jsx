@@ -12,32 +12,34 @@ const ToggleSwitch = () => {
     const radioThree = useRef()
 
     useEffect(() => {
+        const changeTheme = (inputReference) => {
+            let slider = document.querySelector('.toggleSwitchDiv')
+            let labels = document.querySelectorAll('.toggleLabel')
+
+            labels.forEach((label) => {
+                if (label === inputReference.parentElement) {
+                    label.classList.add('selected')
+                    const { value } = inputReference
+                    if (value === ONE) {
+                        setTheme('')
+                        slider.style.transform = `translate(calc(0% + 5px), -50%) scale(0.7)`
+                    } else if (value === TWO) {
+                        setTheme('theme-light')
+                        slider.style.transform = `translate(100%, -50%) scale(0.7)`
+                    } else if (value === THREE) {
+                        setTheme('theme-purple')
+                        slider.style.transform = `translate(calc(200% - 5px), -50%) scale(0.7)`
+                    }
+                } else {
+                    label.classList.remove('selected')
+                }
+            })
+        }
+
         const handleClick = (event) => {
             if (event.target.tagName.toLowerCase() === 'input') {
                 let input = event.target
-                let slider = document.querySelector('.toggleSwitchDiv')
-                let labels = document.querySelectorAll('.toggleLabel')
-
-                labels.forEach(function (label) {
-                    if (label === input.parentElement) {
-                        label.classList.add('selected')
-                        console.log(input.value)
-                        const { value } = input
-                        console.log('value: ', value)
-                        if (value === ONE) {
-                            setTheme('')
-                            slider.style.transform = `translate(calc(0% + 5px), -50%) scale(0.7)`
-                        } else if (value === TWO) {
-                            setTheme('theme-light')
-                            slider.style.transform = `translate(100%, -50%) scale(0.7)`
-                        } else if (value === THREE) {
-                            setTheme('theme-purple')
-                            slider.style.transform = `translate(calc(200% - 5px), -50%) scale(0.7)`
-                        }
-                    } else {
-                        label.classList.remove('selected')
-                    }
-                })
+                changeTheme(input)
             }
         }
 
