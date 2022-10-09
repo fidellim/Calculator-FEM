@@ -6,7 +6,6 @@ const Context = createContext()
 function App() {
     const [theme, setTheme] = useState('')
     const [calculator, setCalculator] = useState({
-        prevNum: undefined,
         currNum: '0',
         operation: undefined,
         calculation: undefined,
