@@ -16,10 +16,7 @@ const Calculator = () => {
                 </div>
                 <ToggleSwitch />
             </div>
-            <div
-                type="text"
-                className="flex flex-col gap-2 text-right bg-screenBackground rounded-lg w-full p-5 text-default"
-            >
+            <div className="flex flex-col gap-2 text-right bg-screenBackground rounded-lg w-full p-5 text-default">
                 <div
                     className={`bg-delResetBackground text-delResetText text-[20px] rounded-md min-h-[46px] ${
                         !calculator.calculation && 'opacity-0'
