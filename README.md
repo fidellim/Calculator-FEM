@@ -10,8 +10,6 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
     -   [Links](#links)
 -   [My process](#my-process)
     -   [Built with](#built-with)
-    -   [What I learned](#what-i-learned)
-    -   [Continued development](#continued-development)
     -   [Useful resources](#useful-resources)
 -   [Author](#author)
 
@@ -44,32 +42,12 @@ Users should be able to:
 -   Mobile-first workflow
 -   [React](https://reactjs.org/) - JS library
 
-### What I learned
-
-<!-- ```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-``` -->
-
-### Continued development
-
 ### Useful resources
 
 -   [Color Theme Switcher](https://dev.to/chaoocharles/learn-react-and-tailwind-css-one-color-website-with-a-theme-switcher-1gj0) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
--   https://calculator-abhijit.netlify.app/
--   https://react-calculator-app-main.herokuapp.com/
--   https://github.com/kens-visuals/calculator-app
-
--   https://codepen.io/Kelderic/pen/Qjagjz
+-   [3 Option Toggle Switch](https://codepen.io/Kelderic/pen/Qjagjz)
+-   [Display JS Object](https://stackoverflow.com/questions/957537/how-can-i-display-a-javascript-object)
+-   [FreeCodeCamp Test Cases](https://github.com/freeCodeCamp/testable-projects-fcc/blob/main/src/project-tests/calculator-tests.js)
 
 ## Author
 
