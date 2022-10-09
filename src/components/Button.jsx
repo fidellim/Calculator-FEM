@@ -245,7 +245,13 @@ const Button = ({ value, id }) => {
             //  replace "--" to "- -"
             statement = statement.replaceAll(/--/g, '- -')
 
-            const answer = eval(statement)
+            const solveStatement = (statement) => {
+                return Function(`'use strict'; return (${statement})`)()
+            }
+
+            const answer = solveStatement(statement)
+            // const answer = eval(statement)
+
             //  replace "- -" to "--"
             statement = statement.replaceAll(/- -/g, '--')
             // console.log(answer)
