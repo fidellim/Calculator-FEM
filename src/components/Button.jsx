@@ -253,8 +253,10 @@ const Button = ({ value, id }) => {
                 return Function(`'use strict'; return (${statement})`)()
             }
 
-            const answer = solveStatement(statement)
+            let answer = solveStatement(statement)
             // const answer = eval(statement)
+
+            answer = answer.toPrecision(12)
 
             //  replace "- -" to "--"
             statement = statement.replaceAll(/- -/g, '--')
