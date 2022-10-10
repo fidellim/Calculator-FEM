@@ -30,10 +30,16 @@ const Button = ({ value, id }) => {
                 if (buttonValue === DECIMAL) tempVal = '0.'
                 else tempVal = buttonValue
 
+                // check if previous calculation has value already
+                // if yes, add it with tempVal
+
                 setCalculator((prev) => ({
                     ...prev,
                     currNum: tempVal,
-                    calculation: tempVal,
+                    calculation:
+                        prev.calculation && prev.calculation.length > 1
+                            ? prev.calculation.slice(0, -1) + tempVal
+                            : tempVal,
                 }))
                 // }
             } else {
@@ -47,10 +53,7 @@ const Button = ({ value, id }) => {
                     }))
                 } else if (buttonValue === DECIMAL) {
                     // there should only be one decimal per number
-                    if (
-                        !calculator.currNum.includes(DECIMAL) &&
-                        buttonValue === DECIMAL
-                    ) {
+                    if (!calculator.currNum.includes(DECIMAL)) {
                         setCalculator((prev) => {
                             // Check if prev.currNum is operator
                             let isPrevCharOperator = OPERATIONS.includes(
