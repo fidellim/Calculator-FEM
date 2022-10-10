@@ -256,6 +256,8 @@ const Button = ({ value, id }) => {
             let answer = solveStatement(statement)
             // const answer = eval(statement)
 
+            // Add precision to fix computational errors such as "0.1 + 0.2 = 0.30000000000000004"
+            // Answer should be 0.3
             answer = answer.toPrecision(12)
 
             //  replace "- -" to "--"
