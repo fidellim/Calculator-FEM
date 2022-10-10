@@ -60,6 +60,7 @@ Users should be able to:
 -   [eval() function has risk](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval)
 -   [Alternative for eval()](https://dev.to/spukas/everything-wrong-with-javascript-eval-35on)
 -   [Disable Rule ESLint](https://eslint.org/docs/latest/user-guide/configuring/rules)
+-   [Fix imprecise calculation in JavaScript](https://vyspiansky.github.io/2019/01/20/imprecise-calculations-in-javascript/)
 
 ## Author
 
